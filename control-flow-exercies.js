@@ -25,3 +25,16 @@ const showNumbers = limit => {
 	}
 };
 showNumbers(10);
+
+/****************************************************************/
+
+// Exercise - Count Truthy
+let countTruthy = array => {
+	let count = 0;
+	for (let item of array) if (item) count++;
+	return count;
+};
+const array = [1, true, NaN, undefined, 'string', '', null, false, 0];
+console.log(countTruthy(array));
+
+/****************************************************************/
