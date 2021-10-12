@@ -50,20 +50,53 @@ const showProperties = obj => {
 		if (typeof obj[key] === 'string') console.log(key, obj[key]);
 };
 
-showProperties(obj);
+// showProperties(obj);
 
 /****************************************************************/
 
-// Exercise - String Properties
+// Exercise - Sum of Multiples 3 and 5
 
 const sum = limit => {
 	let sum = 0;
-	
-	for (let i = 0; i <= limit; i++) 
-		if (i % 3 === 0 || i % 5 === 0) 
-			sum += i;
-
+	for (let i = 0; i <= limit; i++) if (i % 3 === 0 || i % 5 === 0) sum += i;
 	return sum;
 };
 
-console.log(sum(15));
+// console.log(sum(15));
+
+/****************************************************************/
+
+// Exercise - Grade
+
+const calculateGrade = marks => {
+	const average = calculateAverage(marks);
+	return average >= 90
+		? 'A'
+		: average >= 80
+		? 'B'
+		: average >= 70
+		? 'C'
+		: average >= 60
+		? 'D'
+		: 'F';
+};
+
+const calculateAverage = array => {
+	let sum = 0;
+	for (let value of array) {
+		sum += value;
+	}
+	return sum / array.length;
+};
+const marks = [80, 80, 50];
+// console.log(calculateGrade(marks));
+
+/****************************************************************/
+
+// Exercise - Stars
+rows = 1;
+for (let i = '*'; i.length <= rows; i += '*') {
+	console.log(i);
+}
+
+/****************************************************************/
