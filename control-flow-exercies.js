@@ -24,7 +24,7 @@ const showNumbers = limit => {
 		console.log(i, i % 2 === 0 ? 'EVEN' : 'ODD');
 	}
 };
-showNumbers(10);
+// showNumbers(10);
 
 /****************************************************************/
 
@@ -35,6 +35,20 @@ let countTruthy = array => {
 	return count;
 };
 const array = [1, true, NaN, undefined, 'string', '', null, false, 0];
-console.log(countTruthy(array));
+// console.log(countTruthy(array));
 
 /****************************************************************/
+
+// Exercise - String Properties
+let obj = {
+	name: 'Mahmoud',
+	age: 29,
+	isMarried: false
+};
+const showProperties = obj => {
+	for (let key in obj) {
+		if (typeof obj[key] === 'string') console.log(key, obj[key]);
+	}
+};
+
+showProperties(obj)
