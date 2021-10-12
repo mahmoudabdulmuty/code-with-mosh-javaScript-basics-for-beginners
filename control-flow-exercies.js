@@ -94,9 +94,19 @@ const marks = [80, 80, 50];
 /****************************************************************/
 
 // Exercise - Stars
-rows = 1;
+let rows = 10;
 for (let i = '*'; i.length <= rows; i += '*') {
-	console.log(i);
+	// console.log(i);
 }
+
+/****************************************************************/
+
+// Exercise - Prime Numbers
+const showPrimes = limit => {
+	for (let i = 0; i < limit; i++) {
+		if (i % i == 0) console.log(i);
+	}
+};
+showPrimes(20);
 
 /****************************************************************/
