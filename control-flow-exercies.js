@@ -32,10 +32,10 @@ const showNumbers = limit => {
 let countTruthy = array => {
 	let count = 0;
 	for (let item of array) if (item) count++;
-	return count;
+	console.log(count);
 };
 const array = [1, true, NaN, undefined, 'string', '', null, false, 0];
-// console.log(countTruthy(array));
+// countTruthy(array);
 
 /****************************************************************/
 
@@ -46,9 +46,24 @@ let obj = {
 	isMarried: false
 };
 const showProperties = obj => {
-	for (let key in obj) {
+	for (let key in obj)
 		if (typeof obj[key] === 'string') console.log(key, obj[key]);
-	}
 };
 
-showProperties(obj)
+showProperties(obj);
+
+/****************************************************************/
+
+// Exercise - String Properties
+
+const sum = limit => {
+	let sum = 0;
+	
+	for (let i = 0; i <= limit; i++) 
+		if (i % 3 === 0 || i % 5 === 0) 
+			sum += i;
+
+	return sum;
+};
+
+console.log(sum(15));
