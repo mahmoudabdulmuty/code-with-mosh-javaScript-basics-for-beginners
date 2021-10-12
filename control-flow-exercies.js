@@ -9,12 +9,12 @@ const checkSpeed = speed => {
 	return point < 12 ? `${point} point` : `License suspended`;
 };
 
-// console.log(checkSpeed()); // check for undefined
-// console.log(checkSpeed(70)); // check for speedlimit
-// console.log(checkSpeed(71)); // check for below 75
-// console.log(checkSpeed(75)); // check for 75
-// console.log(checkSpeed(80)); // check for above 75
-// console.log(checkSpeed(130)); // check for above 12 points
+console.log(checkSpeed()); // check for undefined
+console.log(checkSpeed(70)); // check for speedlimit
+console.log(checkSpeed(71)); // check for below 75
+console.log(checkSpeed(75)); // check for 75
+console.log(checkSpeed(80)); // check for above 75
+console.log(checkSpeed(130)); // check for above 12 points
 
 /****************************************************************/
 
@@ -24,7 +24,7 @@ const showNumbers = limit => {
 		console.log(i, i % 2 === 0 ? 'EVEN' : 'ODD');
 	}
 };
-// showNumbers(10);
+showNumbers(10);
 
 /****************************************************************/
 
@@ -35,7 +35,7 @@ let countTruthy = array => {
 	console.log(count);
 };
 const array = [1, true, NaN, undefined, 'string', '', null, false, 0];
-// countTruthy(array);
+countTruthy(array);
 
 /****************************************************************/
 
@@ -50,24 +50,22 @@ const showProperties = obj => {
 		if (typeof obj[key] === 'string') console.log(key, obj[key]);
 };
 
-// showProperties(obj);
+showProperties(obj);
 
 /****************************************************************/
 
 // Exercise - Sum of Multiples 3 and 5
-
 const sum = limit => {
 	let sum = 0;
 	for (let i = 0; i <= limit; i++) if (i % 3 === 0 || i % 5 === 0) sum += i;
 	return sum;
 };
 
-// console.log(sum(15));
+console.log(sum(15));
 
 /****************************************************************/
 
 // Exercise - Grade
-
 const calculateGrade = marks => {
 	const average = calculateAverage(marks);
 	return average >= 90
@@ -89,24 +87,25 @@ const calculateAverage = array => {
 	return sum / array.length;
 };
 const marks = [80, 80, 50];
-// console.log(calculateGrade(marks));
+console.log(calculateGrade(marks));
 
 /****************************************************************/
 
 // Exercise - Stars
 let rows = 10;
 for (let i = '*'; i.length <= rows; i += '*') {
-	// console.log(i);
+	console.log(i);
 }
 
 /****************************************************************/
 
 // Exercise - Prime Numbers
-const showPrimes = limit => {
-	for (let i = 0; i < limit; i++) {
-		if (i % i == 0) console.log(i);
-	}
-};
-showPrimes(20);
+function showPrimes(limit) {
+	for (let i = 2; i < limit; i++) if (isPrime(i)) console.log(i);
+}
 
-/****************************************************************/
+function isPrime(number) {
+	for (let j = 2; j < number; j++) if (j % number === 0) return false;
+	return true;
+}
+showPrimes(10);
